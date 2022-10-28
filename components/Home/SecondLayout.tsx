@@ -1,5 +1,5 @@
 import { FourImage } from './FourImage';
-import { Button } from './General/button';
+import { Button } from '../General/button';
 
 export const SecondLayout = () => {
   return (

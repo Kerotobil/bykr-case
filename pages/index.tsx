@@ -1,7 +1,6 @@
-import { InitialLayout } from '../components/InitialLayout';
-import { Navbar } from '../components/Navbar';
-import { FourImage } from '../components/FourImage';
-import { SecondLayout } from '../components/SecondLayout';
+import { InitialLayout } from '../components/Home/InitialLayout';
+import { Navbar } from '../components/Home/Navbar';
+import { SecondLayout } from '../components/Home/SecondLayout';
 
 export default function Home() {
   return (

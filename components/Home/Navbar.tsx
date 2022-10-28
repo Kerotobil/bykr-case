@@ -1,4 +1,4 @@
-import { Logo } from './Logo';
+import { Logo } from '../General/Logo';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 
 export const Navbar = () => {

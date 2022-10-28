@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from './General/button';
+import { Button } from '../General/button';
 
 export const InitialLayout = () => {
   return (
