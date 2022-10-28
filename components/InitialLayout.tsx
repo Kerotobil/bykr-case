@@ -1,9 +1,9 @@
-import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
+import { Button } from './General/button';
 
 export const InitialLayout = () => {
   return (
-    <div className="relative pb-56 border-2 border-white">
+    <div className="relative pb-56 ">
       <div className="relative text-center text-9xl">
         <h1 className="">Digital</h1>
         <h1 className="pr-36">Agency</h1>
@@ -25,9 +25,7 @@ export const InitialLayout = () => {
       </div>
       <div className="mt-10 max-w-lg pr-32 mx-auto">
         <p className="text-lg">Full-service design support that growing B2B companies need. World leading agency.</p>
-        <button className="w-48 flex items-center justify-center h-14 mt-10 text-lg bg-yellow-500 text-black rounded-full">
-          Our Project <ArrowUpRightIcon className="w-4 h-4 ml-3" />
-        </button>
+        <Button text="Our Project" />
       </div>
       <div className="mt-10 mx-auto "></div>
       <div className="absolute top-44 right-20 md:right-24 lg:right-32 ">
