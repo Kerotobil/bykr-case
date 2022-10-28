@@ -4,7 +4,7 @@ import { Bars3Icon } from '@heroicons/react/24/solid';
 export const Navbar = () => {
   const menuList = ['About Us', 'What We Do', 'Our work', 'Blog', 'Say hi'];
   return (
-    <div className="flex justify-between px-4 items-center max-w-7xl">
+    <div className="flex justify-between px-24 items-center max-w-7xl">
       <Logo />
       <ul className="flex justify-between w-2/4 text-white">
         {menuList.map((item, index) => (
