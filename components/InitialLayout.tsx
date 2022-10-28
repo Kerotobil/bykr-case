@@ -28,19 +28,9 @@ export const InitialLayout = () => {
         <Button text="Our Project" />
       </div>
       <div className="mt-10 mx-auto "></div>
-      <div className="absolute top-44 right-20 md:right-24 lg:right-32 ">
-        <div className="relative max-w-md w-80">
-          <Image
-            src="/heroImage.png"
-            alt=""
-            width={700}
-            height={475}
-            sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-          />
+      <div className="absolute top-44 right-20 md:right-24 lg:right-10 ">
+        <div className="relative">
+          <Image src="/heroImage.png" alt="" width={448} height={475} />
         </div>
       </div>
       <div className="absolute bottom-0 right-20 md:right-24 lg:left-9 ">
