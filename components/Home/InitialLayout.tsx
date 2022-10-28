@@ -4,7 +4,7 @@ import { Button } from '../General/button';
 export const InitialLayout = () => {
   return (
     <div className="relative pb-56 ">
-      <div className="relative text-center text-9xl">
+      <div className="relative text-center text-9xl font-extrabold">
         <h1 className="">Digital</h1>
         <h1 className="pr-36">Agency</h1>
         <div className="absolute top-0 left-24 md:left-24 lg:left-52 xl:left-72">
@@ -24,7 +24,9 @@ export const InitialLayout = () => {
         </div>
       </div>
       <div className="mt-10 max-w-lg pr-32 mx-auto">
-        <p className="text-lg">Full-service design support that growing B2B companies need. World leading agency.</p>
+        <p className="text-lg text-zinc-200">
+          Full-service design support that growing B2B companies need. World leading agency.
+        </p>
         <Button text="Our Project" />
       </div>
       <div className="mt-10 mx-auto "></div>
