@@ -3,6 +3,7 @@ import { FourthLayout } from '../components/Home/FourthLayout';
 import { InitialLayout } from '../components/Home/InitialLayout';
 import { Navbar } from '../components/Home/Navbar';
 import { SecondLayout } from '../components/Home/SecondLayout';
+import { SeventhLayout } from '../components/Home/SeventhLayout';
 import { SixthLayout } from '../components/Home/SixthLayout';
 import { ThirdLayout } from '../components/Home/ThirdLayout';
 
@@ -20,6 +21,7 @@ export default function Home() {
       <FourthLayout />
       <FifthLayout />
       <SixthLayout />
+      <SeventhLayout />
     </div>
   );
 }
