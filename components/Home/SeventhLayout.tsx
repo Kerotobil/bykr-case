@@ -26,8 +26,10 @@ export const SeventhLayout = () => {
           <div>
             <Image src={item.imageUrl} alt="" width={554} height={120} />
             <h6 className="bg-stone-100 w-min text-xs px-3 py-1 mt-6 text-black  rounded-lg">{item.tag} </h6>
-            <div>
+            <div className="mt-4 text-base">
               <span>{item.author} </span>&bull; <span>{item.date} </span>
+            </div>
+            <div>
               <h3 className="mt-4">{item.title} </h3>
               <Button text="Read More" bgColor="bg-transparent" borderClasses="border" textClasses="text-white" />
             </div>
