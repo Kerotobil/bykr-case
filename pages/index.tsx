@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="mainBg">
       <div className="max-w-screen-1/2xl mainBg pb-24 mx-auto text-white font-inter">
-        <div className=" h-screen mx-auto pt-10">
+        <div className="md:h-screen mx-auto pt-10">
           <Navbar />
           <div className="mt-16">
             <InitialLayout />

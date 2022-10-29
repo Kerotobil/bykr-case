@@ -12,7 +12,7 @@ interface Props {
 export const Button = (props: Props) => {
   return (
     <button
-      className={`w-48 flex items-center justify-center h-14 mt-10 text-lg rounded-full ${
+      className={`w-36 md:w-48 flex items-center justify-center h-14 mt-10 text-lg rounded-full ${
         props.bgColor == null ? 'bg-yellow-500' : props.bgColor
       } ${props.borderClasses == null ? 'border-0' : props.borderClasses} ${
         props.textClasses == null ? 'text-black' : props.textClasses
