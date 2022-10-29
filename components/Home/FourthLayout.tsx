@@ -4,17 +4,19 @@ import { Button } from '../General/button';
 export const FourthLayout = () => {
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="flex justify-between h-28 items-center mt-28">
-        <h2 className="max-w-sm">Service we can help you</h2>
+      <div className="flex justify-between h-28 items-center px-8 mt-28">
+        <h2 className="md:max-w-sm">Service We Can Help You</h2>
         <button
-          className={`w-32 flex items-center my-auto justify-center h-14 text-lg text-white rounded-full bg-transparent border `}
+          className={`w-32 hidden md:flex items-center my-auto justify-center h-14 text-lg text-white rounded-full bg-transparent border `}
         >
           {'See All'} <ArrowUpRightIcon className="w-4 h-4 ml-3" />
         </button>
+
+        <div className="text-yellow-500 ml-12 w-20 md:hidden">See All</div>
       </div>
-      <div className="grid grid-cols-2 gap-8 max-w-5xl mx-auto justify-items-center mt-10">
-        <div className="max-w-lg space-y-8">
-          <div className="bg-custom px-7 py-20 rounded-tl-4xl ">
+      <div className="flex md:grid md:grid-cols-2 space-x-4 gap-8 px-8 md:max-w-5xl mx-auto md:justify-items-center mt-10  overflow-x-auto pb-8 md:pb-0">
+        <div className="flex flex-row md:flex-col md:max-w-lg space-x-4 md:space-x-0 md:space-y-8">
+          <div className="bg-custom px-7 py-12 md:py-20 w-96 md:w-full rounded-3xl md:rounded-none md:rounded-tl-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M44.4679 12.8873L51.1126 19.5289L44.4679 12.8873ZM48.7408 7.03626L30.7736 25.0035C29.8452 25.9306 29.2121 27.1117 28.954 28.398L27.2943 36.7056L35.6019 35.0428C36.8882 34.7856 38.0678 34.155 38.9964 33.2263L56.9637 15.2591C57.5036 14.7192 57.9319 14.0782 58.2241 13.3728C58.5163 12.6673 58.6667 11.9112 58.6667 11.1477C58.6667 10.3841 58.5163 9.62803 58.2241 8.92259C57.9319 8.21715 57.5036 7.57617 56.9637 7.03626C56.4237 6.49634 55.7828 6.06805 55.0773 5.77585C54.3719 5.48365 53.6158 5.33325 52.8522 5.33325C52.0887 5.33325 51.3326 5.48365 50.6272 5.77585C49.9217 6.06805 49.2808 6.49634 48.7408 7.03626V7.03626Z"
@@ -35,7 +37,7 @@ export const FourthLayout = () => {
             </p>
             <Button text="Read More" bgColor="bg-transparent" borderClasses="border" textClasses="text-white" />
           </div>
-          <div className="bg-custom px-7 py-20 rounded-bl-4xl ">
+          <div className="bg-custom px-7 py-12 md:py-20 w-96 md:w-full rounded-3xl md:rounded-none md:rounded-bl-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M18.6667 31.1257V45.3331H32.8741L29.9111 42.3702H21.6296V34.0887L18.6667 31.1257Z"
@@ -59,8 +61,8 @@ export const FourthLayout = () => {
             <Button text="Read More" bgColor="bg-transparent" borderClasses="border" textClasses="text-white" />
           </div>
         </div>
-        <div className="max-w-lg mt-10 space-y-8">
-          <div className="bg-custom px-7 py-20 rounded-tr-4xl ">
+        <div className="flex flex-row md:flex-col md:max-w-lg md:mt-10 space-x-4 md:space-x-0 md:space-y-8">
+          <div className="bg-custom px-7 py-12 md:py-20 w-96 md:w-full rounded-3xl md:rounded-none md:rounded-tr-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M24 45.3332H32M10.6667 10.6666V53.3332C10.6667 54.7477 11.2286 56.1043 12.2288 57.1045C13.229 58.1047 14.5855 58.6666 16 58.6666H48C49.4145 58.6666 50.7711 58.1047 51.7713 57.1045C52.7715 56.1043 53.3334 54.7477 53.3334 53.3332V22.2453C53.3333 21.5347 53.1912 20.8314 52.9155 20.1766C52.6399 19.5217 52.2361 18.9286 51.728 18.4319L39.888 6.85325C38.8917 5.87901 37.5535 5.33343 36.16 5.33325H36C14.5855 5.33325 13.229 5.89515 12.2288 6.89535C11.2286 7.89554 10.6667 9.2521 10.6667 10.6666V10.6666ZM24 34.6666H40H24Z"
@@ -81,7 +83,7 @@ export const FourthLayout = () => {
             </p>
             <Button text="Read More" />
           </div>
-          <div className="bg-custom px-7 py-20 rounded-br-4xl ">
+          <div className="bg-custom px-7 py-12 md:py-20 w-96 md:w-full rounded-3xl md:rounded-none md:rounded-br-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M21.3333 53.3334H42.6666M5.33331 16.0001C5.33331 14.5856 5.89522 13.229 6.89541 12.2288C7.8956 11.2287 9.25216 10.6667 10.6666 10.6667H53.3333C54.7478 10.6667 56.1044 11.2287 57.1045 12.2288C58.1047 13.229 58.6666 14.5856 58.6666 16.0001V40.0001C58.6666 41.4146 58.1047 42.7711 57.1045 43.7713C56.1044 44.7715 54.7478 45.3334 53.3333 45.3334H30.6666C9.25216 45.3334 7.8956 44.7715 6.89541 43.7713C5.89522 42.7711 5.33331 41.4146 5.33331 40.0001V16.0001Z"

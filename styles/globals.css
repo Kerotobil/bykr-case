@@ -10,12 +10,20 @@
 
 @layer components {
   h2 {
-    @apply font-bold text-5xl;
+    @apply font-bold text-2xl;
   }
   h3 {
-    @apply font-semibold text-3xl;
+    @apply font-semibold text-2xl;
   }
   p {
     @apply text-base text-zinc-300;
+  }
+  @media screen(md) {
+    h2 {
+      @apply font-bold text-5xl;
+    }
+    h3 {
+      @apply font-semibold text-3xl;
+    }
   }
 }
