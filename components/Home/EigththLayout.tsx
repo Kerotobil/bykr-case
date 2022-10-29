@@ -14,7 +14,7 @@ export const EigththLayout = () => {
         {contents.map((item, index) => (
           <div key={index} className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
             <Image src={item.imageUrl} alt="" width={225} height={225} />
-            <h3 className="mt-14 text-center">{item.title} </h3>
+            <h3 className="mt-14 text-center font-redRose font-semibold">{item.title} </h3>
           </div>
         ))}
       </div>
