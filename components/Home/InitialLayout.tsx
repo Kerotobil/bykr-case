@@ -3,7 +3,7 @@ import { Button } from '../General/button';
 
 export const InitialLayout = () => {
   return (
-    <div className="relative pb-56 ">
+    <div className="relative md:pb-56 ">
       <div className="relative md:text-center text-7xl md:text-8xl lg:text-9xl font-extrabold">
         <h1 className="ml-28 md:ml-0">Digital</h1>
         <h1 className="ml-8 md:ml-0 md:pr-36">Agency</h1>

@@ -14,7 +14,7 @@ export const FourImage = () => {
       </div>
       <div className="mt-3 relative z-20">
         <Image src="/Rectangle9.png" className="z-20" alt="" width={264} height={70} />
-        <div className="-z-10 absolute -bottom-16 -right-16">
+        <div className="-z-10 w-24 md:w-auto absolute -bottom-10 -right-8 md:-bottom-16 md:-right-16">
           <Image src="/Ornament14.png" alt="" width={175} height={35} />
         </div>
       </div>
