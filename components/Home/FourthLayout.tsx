@@ -14,7 +14,7 @@ export const FourthLayout = () => {
 
         <div className="text-yellow-500 ml-12 w-20 md:hidden">See All</div>
       </div>
-      <div className="flex md:grid md:grid-cols-2 space-x-4 gap-8 px-8 md:max-w-5xl mx-auto md:justify-items-center mt-10  overflow-x-auto pb-8 md:pb-0">
+      <div className="flex md:grid md:grid-cols-2 space-x-4 gap-8 px-8 md:max-w-5xl mx-auto md:justify-items-center mt-10 overflow-x-auto pb-8 md:pb-0">
         <div className="flex flex-row md:flex-col md:max-w-lg space-x-4 md:space-x-0 md:space-y-8">
           <div className="bg-custom px-7 py-12 md:py-20 w-96 md:w-full rounded-3xl md:rounded-none md:rounded-tl-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">

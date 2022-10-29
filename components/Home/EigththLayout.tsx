@@ -8,9 +8,9 @@ export const EigththLayout = () => {
     { imageUrl: '/Rectangle17.png', title: 'Art' },
   ];
   return (
-    <div className="px-44 mt-28">
+    <div className="hidden md:block px-44 mt-28">
       <h2>Categories</h2>
-      <div className="flex justify-between mt-12">
+      <div className="flex space-x-6 justify-between mt-12">
         {contents.map((item, index) => (
           <div key={index} className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
             <Image src={item.imageUrl} alt="" width={225} height={225} />
@@ -18,7 +18,7 @@ export const EigththLayout = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between mt-16">
+      <div className="flex space-x-6 justify-between mt-16">
         {contents.map((item, index) => (
           <div key={index} className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
             <Image src={item.imageUrl} alt="" width={225} height={225} />

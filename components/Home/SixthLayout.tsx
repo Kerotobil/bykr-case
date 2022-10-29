@@ -21,18 +21,19 @@ export const SixthLayout = () => {
     },
   ];
   return (
-    <div className="pb-24 pl-36 mt-28 ">
-      <h2>What say happy clients</h2>
+    <div className="pb-24 pl-12 md:pl-36 mt-28 w-96 md:w-auto overflow-x-auto">
+      <div className="flex justify-between px-0 md:px-4 ">
+        <h2 className="hidden md:block">What say happy clients</h2>
+
+        <h2 className="md:hidden block">What client says</h2>
+        <div className="text-yellow-500 ml-12 w-20 md:hidden">See All</div>
+      </div>
+
       <div className="flex space-x-5 overflow-hidden mt-12">
         {comment.map((item, index) => (
-          <div
-            key={index}
-            style={{ backgroundColor: '#353F5B' }}
-            className="flex-none max-w-3xl rounded-4xl px-14 py-14"
-          >
+          <div key={index} className="flex-none max-w-xs bg-custom md:max-w-3xl rounded-4xl px-8 md:px-14 py-14">
             <svg
-              width="62"
-              className="opacity-20"
+              className="opacity-20 mx-auto md: w-10 md:w-16"
               height="48"
               viewBox="0 0 62 48"
               fill="none"
@@ -45,7 +46,7 @@ export const SixthLayout = () => {
             </svg>
 
             <p className="mt-8">{item.comment} </p>
-            <div className="mt-8 flex justify-between">
+            <div className="mt-8 flex flex-col md:flex-row justify-between">
               <div className="flex">
                 <div>
                   <Image src={item.photoUrl} alt="" width={70} height={70} />
