@@ -1,3 +1,4 @@
+import { FifthLayout } from '../components/Home/FifthLayout';
 import { FourthLayout } from '../components/Home/FourthLayout';
 import { InitialLayout } from '../components/Home/InitialLayout';
 import { Navbar } from '../components/Home/Navbar';
@@ -16,6 +17,7 @@ export default function Home() {
       <SecondLayout />
       <ThirdLayout />
       <FourthLayout />
+      <FifthLayout />
     </div>
   );
 }

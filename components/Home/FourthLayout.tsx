@@ -5,7 +5,7 @@ export const FourthLayout = () => {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="flex justify-between h-28 items-center mt-28">
-        <h1 className="text-5xl max-w-sm">Service we can help you</h1>
+        <h2 className="max-w-sm">Service we can help you</h2>
         <button
           className={`w-32 flex items-center my-auto justify-center h-14 text-lg text-white rounded-full bg-transparent border `}
         >
@@ -22,13 +22,13 @@ export const FourthLayout = () => {
                 strokeWidth="2.5"
               />
               <path
-                d="M52.3926 42.98V52.3919C52.3926 54.056 51.7316 55.652 50.5549 56.8287C49.3782 58.0054 47.7822 58.6665 46.1181 58.6665H11.6079C9.94379 58.6665 8.34783 58.0054 7.17112 56.8287C5.9944 55.652 5.33334 54.056 5.33334 52.3919V17.8818C5.33334 16.2176 5.9944 14.6217 7.17112 13.445C8.34783 12.2682 9.94379 11.6072 11.6079 11.6072H21.0198"
+                d="M52.3926 42.98V52.3919C52.3926 54.056 51.7316 55.652 50.5549 56.8287C49.3782 58.0054 47.7822 58.6665 46.1181 58.6665H31.6079C9.94379 58.6665 8.34783 58.0054 7.17112 56.8287C5.9944 55.652 5.33334 54.056 5.33334 52.3919V17.8818C5.33334 16.2176 5.9944 14.6217 7.17112 13.445C8.34783 12.2682 9.94379 11.6072 11.6079 11.6072H21.0198"
                 stroke="#FFC93E"
                 strokeWidth="2.5"
                 strokeLinecap="round"
               />
             </svg>
-            <h1 className="text-3xl mt-8">Content Writing</h1>
+            <h3 className=" mt-8">Content Writing</h3>
             <p className="text-base mt-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis. Nulla
               ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.{' '}
@@ -42,7 +42,7 @@ export const FourthLayout = () => {
                 fill="#FFC93E"
               />
               <path
-                d="M56.9926 53.1703L52.7407 48.8592V52.7407H11.2592V46.5925H14.2222V44.2222H11.2592V34.3703H14.2222V32H11.2592V22.5185H14.2222V20.1481H11.2592V11.8666L34.8741 35.3481V31.1703L10.8296 7.2444C10.6224 7.03547 10.3576 6.89298 10.0691 6.8351C9.78062 6.77721 9.4814 6.80656 9.20964 6.9194C8.93787 7.03224 8.70586 7.22346 8.54319 7.46867C8.38052 7.71389 8.29456 8.00199 8.29627 8.29625V54.2222C8.29627 54.6151 8.45236 54.9919 8.73019 55.2697C9.00802 55.5476 9.38484 55.7037 9.77776 55.7037H55.9407C56.235 55.7054 56.5231 55.6194 56.7683 55.4567C57.0135 55.2941 57.2047 55.0621 57.3176 54.7903C57.4304 54.5185 57.4597 54.2193 57.4019 53.9308C57.344 53.6423 57.2015 53.3775 56.9926 53.1703V53.1703Z"
+                d="M56.9926 53.1703L52.7407 48.8592V52.7407H31.2592V46.5925H34.2222V44.2222H31.2592V34.3703H34.2222V32H31.2592V22.5185H34.2222V20.1481H31.2592V11.8666L34.8741 35.3481V31.1703L10.8296 7.2444C10.6224 7.03547 10.3576 6.89298 10.0691 6.8351C9.78062 6.77721 9.4814 6.80656 9.20964 6.9194C8.93787 7.03224 8.70586 7.22346 8.54319 7.46867C8.38052 7.71389 8.29456 8.00199 8.29627 8.29625V54.2222C8.29627 54.6151 8.45236 54.9919 8.73019 55.2697C9.00802 55.5476 9.38484 55.7037 9.77776 55.7037H55.9407C56.235 55.7054 56.5231 55.6194 56.7683 55.4567C57.0135 55.2941 57.2047 55.0621 57.3176 54.7903C57.4304 54.5185 57.4597 54.2193 57.4019 53.9308C57.344 53.6423 57.2015 53.3775 56.9926 53.1703V53.1703Z"
                 fill="#FFC93E"
               />
               <path
@@ -51,8 +51,8 @@ export const FourthLayout = () => {
               />
             </svg>
 
-            <h1 className="text-3xl mt-8">Branding</h1>
-            <p className="text-base mt-6">
+            <h3 className="mt-8">Branding</h3>
+            <p className="mt-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis. Nulla
               ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.{' '}
             </p>
@@ -63,22 +63,19 @@ export const FourthLayout = () => {
           <div className="bg-custom px-7 py-20 rounded-tr-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M24 45.3332H32M10.6667 10.6666V53.3332C10.6667 54.7477 11.2286 56.1043 12.2288 57.1045C13.229 58.1047 14.5855 58.6666 16 58.6666H48C49.4145 58.6666 50.7711 58.1047 51.7713 57.1045C52.7715 56.1043 53.3334 54.7477 53.3334 53.3332V22.2453C53.3333 21.5347 53.1912 20.8314 52.9155 20.1766C52.6399 19.5217 52.2361 18.9286 51.728 18.4319L39.888 6.85325C38.8917 5.87901 37.5535 5.33343 36.16 5.33325H16C14.5855 5.33325 13.229 5.89515 12.2288 6.89535C11.2286 7.89554 10.6667 9.2521 10.6667 10.6666V10.6666ZM24 34.6666H40H24Z"
+                d="M24 45.3332H32M10.6667 10.6666V53.3332C10.6667 54.7477 11.2286 56.1043 12.2288 57.1045C13.229 58.1047 14.5855 58.6666 16 58.6666H48C49.4145 58.6666 50.7711 58.1047 51.7713 57.1045C52.7715 56.1043 53.3334 54.7477 53.3334 53.3332V22.2453C53.3333 21.5347 53.1912 20.8314 52.9155 20.1766C52.6399 19.5217 52.2361 18.9286 51.728 18.4319L39.888 6.85325C38.8917 5.87901 37.5535 5.33343 36.16 5.33325H36C14.5855 5.33325 13.229 5.89515 12.2288 6.89535C11.2286 7.89554 10.6667 9.2521 10.6667 10.6666V10.6666ZM24 34.6666H40H24Z"
                 stroke="#FFC93E"
                 stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               />
               <path
                 d="M37.3334 5.33325V15.9999C37.3334 17.4144 37.8953 18.771 38.8955 19.7712C39.8957 20.7713 41.2522 21.3333 42.6667 21.3333H53.3334"
                 stroke="#FFC93E"
                 stroke-width="2.5"
-                stroke-linejoin="round"
               />
             </svg>
 
-            <h1 className="text-3xl mt-8">UX Research</h1>
-            <p className="text-base mt-6">
+            <h3 className="mt-8">UX Research</h3>
+            <p className="mt-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis. Nulla
               ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.{' '}
             </p>
@@ -87,16 +84,14 @@ export const FourthLayout = () => {
           <div className="bg-custom px-7 py-20 rounded-br-4xl ">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M21.3333 53.3334H42.6666M5.33331 16.0001C5.33331 14.5856 5.89522 13.229 6.89541 12.2288C7.8956 11.2287 9.25216 10.6667 10.6666 10.6667H53.3333C54.7478 10.6667 56.1044 11.2287 57.1045 12.2288C58.1047 13.229 58.6666 14.5856 58.6666 16.0001V40.0001C58.6666 41.4146 58.1047 42.7711 57.1045 43.7713C56.1044 44.7715 54.7478 45.3334 53.3333 45.3334H10.6666C9.25216 45.3334 7.8956 44.7715 6.89541 43.7713C5.89522 42.7711 5.33331 41.4146 5.33331 40.0001V16.0001Z"
+                d="M21.3333 53.3334H42.6666M5.33331 16.0001C5.33331 14.5856 5.89522 13.229 6.89541 12.2288C7.8956 11.2287 9.25216 10.6667 10.6666 10.6667H53.3333C54.7478 10.6667 56.1044 11.2287 57.1045 12.2288C58.1047 13.229 58.6666 14.5856 58.6666 16.0001V40.0001C58.6666 41.4146 58.1047 42.7711 57.1045 43.7713C56.1044 44.7715 54.7478 45.3334 53.3333 45.3334H30.6666C9.25216 45.3334 7.8956 44.7715 6.89541 43.7713C5.89522 42.7711 5.33331 41.4146 5.33331 40.0001V16.0001Z"
                 stroke="#FFC93E"
                 stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               />
             </svg>
 
-            <h1 className="text-3xl mt-8">Web Design</h1>
-            <p className="text-base mt-6">
+            <h3 className="mt-8">Web Design</h3>
+            <p className="mt-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis. Nulla
               ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.{' '}
             </p>
