@@ -25,7 +25,11 @@ export const SixthLayout = () => {
       <h2>What say happy clients</h2>
       <div className="flex space-x-5 overflow-hidden mt-12">
         {comment.map((item, index) => (
-          <div style={{ backgroundColor: '#353F5B' }} className="flex-none max-w-3xl rounded-4xl px-14 py-14">
+          <div
+            key={index}
+            style={{ backgroundColor: '#353F5B' }}
+            className="flex-none max-w-3xl rounded-4xl px-14 py-14"
+          >
             <svg
               width="62"
               className="opacity-20"
@@ -52,8 +56,8 @@ export const SixthLayout = () => {
                 </div>
               </div>
               <div className="flex mt-4">
-                {Array.from(Array(item.starCount).keys()).map(() => (
-                  <StarIcon className="w-5 h-5 " />
+                {Array.from(Array(item.starCount).keys()).map((item, index) => (
+                  <StarIcon key={index} className="w-5 h-5 " />
                 ))}
               </div>
             </div>

@@ -12,7 +12,7 @@ export const EigththLayout = () => {
       <h2>Categories</h2>
       <div className="flex justify-between mt-12">
         {contents.map((item, index) => (
-          <div className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
+          <div key={index} className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
             <Image src={item.imageUrl} alt="" width={225} height={225} />
             <h3 className="mt-14 text-center">{item.title} </h3>
           </div>
@@ -20,7 +20,7 @@ export const EigththLayout = () => {
       </div>
       <div className="flex justify-between mt-16">
         {contents.map((item, index) => (
-          <div className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
+          <div key={index} className="bg-gray-600 rounded-4xl pt-3 px-3 pb-14">
             <Image src={item.imageUrl} alt="" width={225} height={225} />
             <h3 className="mt-14 text-center font-redRose font-semibold">{item.title} </h3>
           </div>
