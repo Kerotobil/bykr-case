@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import axios from 'axios';
-
+import * as XLSX from 'xlsx';
 interface country {
   area: number;
   borders: string[];
@@ -22,6 +22,21 @@ export default function App() {
   const [filteredData, setFilteredData] = useState<country[]>();
   const [pageReady, setPageReady] = useState(false);
   const [groupArray, setGroupArray] = useState<string[]>();
+  const [selectedRows, setSelectedRows] = useState<country[]>();
+
+  const downloadExcel = (exportData: country[]) => {
+    const worksheet = XLSX.utils.json_to_sheet(exportData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+    XLSX.writeFile(workbook, 'DataSheet.xlsx');
+  };
+  const downloadCsv = (exportData: country[]) => {
+    const worksheet = XLSX.utils.json_to_sheet(exportData);
+    var csv = XLSX.utils.sheet_to_csv(worksheet, { strip: true });
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+    XLSX.writeFile(workbook, 'DataSheet.csv');
+  };
 
   async function getCountries() {
     const countryData = (await axios.get('https://restcountries.com/v3.1/all')).data as country[];
@@ -46,6 +61,9 @@ export default function App() {
     let newData = filteredData?.filter((item) => item.region.indexOf(groupItem) !== -1);
     setFilteredData(newData);
   }
+  const handleSelected = (selectedRows: country[]) => {
+    setSelectedRows(selectedRows);
+  };
 
   useEffect(() => {
     getCountries();
@@ -146,6 +164,26 @@ export default function App() {
           ))}
         </select>
       </div>
+      {selectedRows && selectedRows?.length > 0 ? (
+        <div>
+          <button
+            onClick={() => {
+              downloadExcel(selectedRows);
+            }}
+          >
+            Export
+          </button>
+          <button
+            onClick={() => {
+              downloadCsv(selectedRows);
+            }}
+          >
+            Export
+          </button>
+        </div>
+      ) : (
+        ''
+      )}
       {filteredData && columns && (
         <div>
           <DataTable
@@ -157,6 +195,7 @@ export default function App() {
             pagination={pageReady}
             paginationServer={false}
             paginationIconFirstPage
+            onSelectedRowsChange={(e) => handleSelected(e.selectedRows)}
           />
         </div>
       )}
