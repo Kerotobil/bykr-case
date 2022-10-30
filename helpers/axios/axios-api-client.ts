@@ -7,5 +7,5 @@ export async function getCountries() {
 }
 export async function getCountry(name: string) {
   const { data } = await axiosClient.get(`name/${name}`);
-  return data as country;
+  return data as country[];
 }

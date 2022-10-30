@@ -7,15 +7,16 @@ import { exportPDF } from '../../helpers/export/exportPdf';
 import { getCountries } from '../../helpers/axios/axios-api-client';
 import { EyeIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function App() {
   const [data, setData] = useState<country[]>();
   const [filteredData, setFilteredData] = useState<country[]>();
   const [filterWord, setFilterWord] = useState<string>();
-  const [pageReady, setPageReady] = useState(false);
   const [groupArray, setGroupArray] = useState<string[]>();
   const [selectedRows, setSelectedRows] = useState<country[]>();
   const [groupWord, setGroupWord] = useState<string>();
+  const router = useRouter();
 
   async function getCountriesService() {
     const countryData = await getCountries();
@@ -41,7 +42,6 @@ export default function App() {
 
   useEffect(() => {
     getCountriesService();
-    setPageReady(true);
   }, []);
 
   useEffect(() => {
@@ -182,7 +182,7 @@ export default function App() {
             data={filteredData}
             defaultSortFieldId={1}
             selectableRows
-            pagination={pageReady}
+            pagination={router.isReady}
             paginationServer={false}
             paginationIconFirstPage
             onSelectedRowsChange={(e) => handleSelected(e.selectedRows)}

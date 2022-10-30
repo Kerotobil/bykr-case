@@ -8,6 +8,7 @@ export interface country {
   independent: boolean;
   maps: { googleMaps: string };
   name: { common: string; official: string };
+  languages: any;
   population: number;
   region: string;
   subregion: string;
