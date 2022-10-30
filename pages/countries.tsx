@@ -1,10 +1,10 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import DataTable from 'react-data-table-component';
-import axios from 'axios';
 import { country } from '../types';
 import { downloadCsv } from '../helpers/export/exportCsv';
 import { downloadExcel } from '../helpers/export/exportXls';
 import { exportPDF } from '../helpers/export/exportPdf';
+import { getCountries } from '../helpers/axios/axios-api-client';
 
 export default function App() {
   const [data, setData] = useState<country[]>();
@@ -13,8 +13,8 @@ export default function App() {
   const [groupArray, setGroupArray] = useState<string[]>();
   const [selectedRows, setSelectedRows] = useState<country[]>();
 
-  async function getCountries() {
-    const countryData = (await axios.get('https://restcountries.com/v3.1/all')).data as country[];
+  async function getCountriesService() {
+    const countryData = await getCountries();
     setData(countryData);
     return data;
   }
@@ -41,7 +41,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    getCountries();
+    getCountriesService();
     setPageReady(true);
   }, []);
 
