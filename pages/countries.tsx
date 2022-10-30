@@ -1,21 +1,10 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import axios from 'axios';
-import * as XLSX from 'xlsx';
-interface country {
-  area: number;
-  borders: string[];
-  capital: string[];
-  cca3: string;
-  fifa: string;
-  flag: string;
-  independent: boolean;
-  maps: { googleMaps: string };
-  name: { common: string; official: string };
-  population: number;
-  region: string;
-  subregion: string;
-}
+import { country } from '../types';
+import { downloadCsv } from '../helpers/export/exportCsv';
+import { downloadExcel } from '../helpers/export/exportXls';
+import { exportPDF } from '../helpers/export/exportPdf';
 
 export default function App() {
   const [data, setData] = useState<country[]>();
@@ -23,20 +12,6 @@ export default function App() {
   const [pageReady, setPageReady] = useState(false);
   const [groupArray, setGroupArray] = useState<string[]>();
   const [selectedRows, setSelectedRows] = useState<country[]>();
-
-  const downloadExcel = (exportData: country[]) => {
-    const worksheet = XLSX.utils.json_to_sheet(exportData);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
-    XLSX.writeFile(workbook, 'DataSheet.xlsx');
-  };
-  const downloadCsv = (exportData: country[]) => {
-    const worksheet = XLSX.utils.json_to_sheet(exportData);
-    var csv = XLSX.utils.sheet_to_csv(worksheet, { strip: true });
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
-    XLSX.writeFile(workbook, 'DataSheet.csv');
-  };
 
   async function getCountries() {
     const countryData = (await axios.get('https://restcountries.com/v3.1/all')).data as country[];
@@ -171,14 +146,21 @@ export default function App() {
               downloadExcel(selectedRows);
             }}
           >
-            Export
+            Export XLS
           </button>
           <button
             onClick={() => {
               downloadCsv(selectedRows);
             }}
           >
-            Export
+            Export CSV
+          </button>
+          <button
+            onClick={() => {
+              exportPDF(selectedRows);
+            }}
+          >
+            Export PDF
           </button>
         </div>
       ) : (
