@@ -1,10 +1,12 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import DataTable from 'react-data-table-component';
-import { country } from '../types';
-import { downloadCsv } from '../helpers/export/exportCsv';
-import { downloadExcel } from '../helpers/export/exportXls';
-import { exportPDF } from '../helpers/export/exportPdf';
-import { getCountries } from '../helpers/axios/axios-api-client';
+import { country } from '../../types';
+import { downloadCsv } from '../../helpers/export/exportCsv';
+import { downloadExcel } from '../../helpers/export/exportXls';
+import { exportPDF } from '../../helpers/export/exportPdf';
+import { getCountries } from '../../helpers/axios/axios-api-client';
+import { EyeIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 export default function App() {
   const [data, setData] = useState<country[]>();
@@ -61,8 +63,13 @@ export default function App() {
         sortable: true,
         reorder: true,
         cell: (row: country) => (
-          <div contentEditable suppressContentEditableWarning={true}>
-            {row.name.common}
+          <div className="flex space-x-1">
+            <Link href={`/countries/${row.name.common}`}>
+              <EyeIcon className="w-5 h-4 text-gray-400" />
+            </Link>
+            <div contentEditable suppressContentEditableWarning={true}>
+              {row.name.common}
+            </div>
           </div>
         ),
       },
