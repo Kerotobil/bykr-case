@@ -11,9 +11,11 @@ import Link from 'next/link';
 export default function App() {
   const [data, setData] = useState<country[]>();
   const [filteredData, setFilteredData] = useState<country[]>();
+  const [filterWord, setFilterWord] = useState<string>();
   const [pageReady, setPageReady] = useState(false);
   const [groupArray, setGroupArray] = useState<string[]>();
   const [selectedRows, setSelectedRows] = useState<country[]>();
+  const [groupWord, setGroupWord] = useState<string>();
 
   async function getCountriesService() {
     const countryData = await getCountries();
@@ -21,23 +23,18 @@ export default function App() {
     return data;
   }
 
-  function handleFilter(filterItem: string) {
-    if (filterItem.length == 0) {
-      setFilteredData(data);
-      return;
-    }
+  function filter() {
+    let newData = data;
 
-    let newData = filteredData?.filter((item) => item.name.common.toLowerCase().indexOf(filterItem) !== -1);
-    setFilteredData(newData);
-  }
-  function handleGroup(groupItem: string) {
-    if (groupItem.length == 0) {
-      setFilteredData(data);
-      return;
+    if (groupWord != null && groupWord != 'all') {
+      newData = newData?.filter((item) => item.region.indexOf(groupWord) !== -1);
     }
-    let newData = filteredData?.filter((item) => item.region.indexOf(groupItem) !== -1);
+    if (filterWord != null) {
+      newData = newData?.filter((item) => item.name.common.toLowerCase().indexOf(filterWord) !== -1);
+    }
     setFilteredData(newData);
   }
+
   const handleSelected = (selectedRows: country[]) => {
     setSelectedRows(selectedRows);
   };
@@ -53,6 +50,10 @@ export default function App() {
     let groupArray = data?.map((item) => item.region).filter((value, index, self) => self.indexOf(value) === index);
     setGroupArray(groupArray);
   }, [data]);
+
+  useEffect(() => {
+    filter();
+  }, [groupWord, filterWord]);
 
   const columns: any = useMemo(() => {
     return [
@@ -126,7 +127,7 @@ export default function App() {
         <input
           type="text"
           className="border border-black rounded-md"
-          onChange={(e: ChangeEvent<HTMLInputElement>) => handleFilter(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setFilterWord(e.target.value)}
         />
       </div>
       <div className="ml-2">
@@ -134,7 +135,7 @@ export default function App() {
         <select
           name="religion"
           className="border h-8 ml-2"
-          onChange={(e: ChangeEvent<HTMLSelectElement>) => handleGroup(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLSelectElement>) => setGroupWord(e.target.value)}
         >
           <option key={'defaullt'} value={'all'}>
             {'All'}
