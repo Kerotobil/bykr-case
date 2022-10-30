@@ -4,7 +4,7 @@ import { NumericText } from './NumericText';
 
 export const SecondLayout = () => {
   return (
-    <div className="mx-auto mt-10 md:mt-0 px-6 md:px-32">
+    <div className="mx-auto mt-10 md:mt-20 px-6 md:px-32">
       <div className="flex flex-col md:flex-row justify-between">
         <div className="pr-2 md:pr-0 md:w-1/2">
           <h1 className=" pr-32 md:pr-0 text-2xl md:text-5xl w-96">We Are A Creative Digital Agency</h1>
@@ -17,7 +17,7 @@ export const SecondLayout = () => {
           </p>
           <Button text="Contact Us" />
         </div>
-        <div className="mt-10 w-72 md:w-auto">
+        <div className="mt-10 w-80 mx-auto md:w-auto">
           <FourImage />
         </div>
       </div>

@@ -36,7 +36,7 @@ export const InitialLayout = () => {
         </div>
       </div>
       <div className="mt-10 mx-auto "></div>
-      <div className="hidden md:block lg:absolute lg:top-44 md:right-24 lg:right-10 ">
+      <div className="hidden md:block lg:absolute lg:top-36 md:right-24 lg:right-20 ">
         <div className="relative">
           <Image src="/heroImage.png" alt="" width={448} height={475} />
         </div>
