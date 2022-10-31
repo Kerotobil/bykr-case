@@ -14,7 +14,6 @@ export default function Country() {
 
   useEffect(() => {
     if (router.isReady) {
-      console.log(router.query);
       getCountryService(`${router.query.country}`);
     }
   }, [router.isReady]);
