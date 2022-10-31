@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, FocusEvent, useEffect, useMemo, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { country } from '../../types';
 import { downloadCsv } from '../../helpers/export/exportCsv';
@@ -39,6 +39,15 @@ export default function App() {
   const handleSelected = (selectedRows: country[]) => {
     setSelectedRows(selectedRows);
   };
+  const handleEdit = (selectedRow: country, newTitle: string) => {
+    let newData = data;
+    const itemIndex = data?.findIndex((e) => e.cca3 == selectedRow.cca3);
+    if (itemIndex && newData) {
+      newData[itemIndex].name.common = newTitle;
+      setData(data?.map((item) => (item.cca3 === selectedRow.cca3 ? { ...selectedRow } : item)));
+      setData([...newData]);
+    }
+  };
 
   useEffect(() => {
     getCountriesService();
@@ -53,7 +62,7 @@ export default function App() {
 
   useEffect(() => {
     filter();
-  }, [groupWord, filterWord]);
+  }, [groupWord, filterWord, data]);
 
   const columns: any = useMemo(() => {
     return [
@@ -68,7 +77,11 @@ export default function App() {
             <Link href={`/countries/${row.name.common}`}>
               <EyeIcon className="w-5 h-4 text-gray-400" />
             </Link>
-            <div contentEditable suppressContentEditableWarning={true}>
+            <div
+              contentEditable
+              suppressContentEditableWarning={true}
+              onBlur={(e: FocusEvent<HTMLDivElement, Element>) => handleEdit(row, e.target.innerText)}
+            >
               {row.name.common}
             </div>
           </div>
@@ -113,7 +126,7 @@ export default function App() {
         reorder: true,
         cell: (row: country) => (
           <div contentEditable suppressContentEditableWarning={true}>
-            {row.population}
+            {row.population.toLocaleString('en-US')}
           </div>
         ),
       },
