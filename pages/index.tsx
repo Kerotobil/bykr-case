@@ -1,33 +1,22 @@
-import { EigththLayout } from '../components/Home/EigththLayout';
-import { FifthLayout } from '../components/Home/FifthLayout';
-import { Footer } from '../components/Home/Footer';
-import { FourthLayout } from '../components/Home/FourthLayout';
-import { InitialLayout } from '../components/Home/InitialLayout';
-import { Navbar } from '../components/Home/Navbar';
-import { SecondLayout } from '../components/Home/SecondLayout';
-import { SeventhLayout } from '../components/Home/SeventhLayout';
-import { SixthLayout } from '../components/Home/SixthLayout';
-import { ThirdLayout } from '../components/Home/ThirdLayout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="mainBg">
-      <div className="max-w-screen-1/2xl mainBg pb-24 mx-auto text-white font-inter">
-        <div className="md:h-screen mx-auto pt-10">
-          <Navbar />
-          <div className="mt-16">
-            <InitialLayout />
+    <div className="max-w-7xl mx-auto">
+      <div className="flex justify-around mt-10">
+        <Link href="/firstStep">
+          <div className=" group border border-gray-400 hover:border-yellow-600 px-6 py-3 cursor-pointer">
+            <h2 className="group-hover:text-yellow-500">First Step</h2>
+            <h3 className="mx-10 text-xl text-center group-hover:text-yellow-500">Figma Design</h3>
           </div>
-        </div>
-        <SecondLayout />
-        <ThirdLayout />
-        <FourthLayout />
-        <FifthLayout />
-        <SixthLayout />
-        <SeventhLayout />
-        <EigththLayout />
+        </Link>
+        <Link href="/countries">
+          <div className=" group border border-gray-400 hover:border-yellow-600 px-6 py-3 cursor-pointer">
+            <h2 className="group-hover:text-yellow-500">Second Step</h2>
+            <h3 className="mx-10 text-xl text-center group-hover:text-yellow-500">Countries</h3>
+          </div>
+        </Link>
       </div>
-      <Footer />
     </div>
   );
 }
