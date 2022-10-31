@@ -113,7 +113,7 @@ export default function App() {
         reorder: true,
         cell: (row: country) => (
           <div contentEditable suppressContentEditableWarning={true}>
-            {row.population}
+            {row.population.toLocaleString('en-US')}
           </div>
         ),
       },
